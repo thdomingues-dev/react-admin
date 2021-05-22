@@ -5,7 +5,7 @@ const UrlField = ({ source }) => {
   const record = useRecordContext();
 
   return record ? (
-    <a href={record[source]}>
+    <a href={`https://${record[source]}`}>
       {record[source]}
     </a>
   ) : null;
