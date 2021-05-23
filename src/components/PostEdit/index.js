@@ -7,9 +7,13 @@ import {
   TextInput
 } from 'react-admin';
 
+const PostTitle = (props) => {
+  return <span>Post {props.record.title ? `"${props.record.title}"` : ''}</span>;
+}
+
 const PostEdit = (props) => {
   return (
-    <Edit {...props}>
+    <Edit title={<PostTitle />} {...props}>
       <SimpleForm>
         <TextInput source="id" disabled />
 
