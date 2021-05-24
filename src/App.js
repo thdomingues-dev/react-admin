@@ -10,9 +10,12 @@ import PostEdit from './components/PostEdit';
 import PostCreate from './components/PostCreate';
 import Home from './components/Home';
 
+import authProvider from './services/authProvider';
+
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+
 const App = () => (
-  <Admin dashboard={Home} dataProvider={dataProvider}>
+  <Admin dashboard={Home} authProvider={authProvider} dataProvider={dataProvider}>
     <Resource
       name="posts"
       list={PostList}

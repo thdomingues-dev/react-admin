@@ -1,7 +1,11 @@
 const authProvider = {
-  login: ({ username }) => {
-    localStorage.setItem('username', username);
-    return Promise.resolve();
+  login: ({ username, password }) => {
+    if (username === "thales" && password === "123") {
+      localStorage.setItem('username', username);
+      return Promise.resolve();
+    } else {
+      return Promise.reject();
+    }
   },
 
   logout: () => {
